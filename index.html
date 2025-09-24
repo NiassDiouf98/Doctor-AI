@@ -1,0 +1,532 @@
+<!-- <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doctor AI — Votre santé, mieux orientée</title>
+  <meta name="description" content="Doctor AI : chatbot de pré-diagnostic médical et système de localisation + gestion de lits pour orienter rapidement les patients vers l'hôpital adéquat." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+  <div class="container" role="main" id="main">
+
+    <header aria-labelledby="site-title">
+      <div class="nav">
+        <div class="brand">
+          <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="6" fill="white" />
+            <path d="M6 12h12M12 6v12" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <img src="assets/876ed39a-2f00-4859-a936-40a383fc8a54.png" alt="doctorai logo" width="60" height="40" />
+          <div>
+            <h1 id="site-title">Doctor AI</h1>
+            <div style="font-size:.85rem;color:rgba(255,255,255,.9)">Votre santé, mieux orientée</div>
+          </div>
+        </div>
+
+        <nav aria-label="Navigation principale">
+          <div class="nav-links">
+            <a href="#probleme">Problème</a>
+            <a href="#solution">Solution</a>
+            <a href="#impact">Impact</a>
+            <a href="#hospitals">Hôpitaux</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h2 id="hero-heading">Chatbot de pré-diagnostic & gestion de lits</h2>
+        <p class="lead">Doctor AI aide à décider si une visite à l'hôpital est nécessaire, oriente l'utilisateur vers l'établissement le plus proche et indique la disponibilité des lits en temps réel.</p>
+
+        <div class="cta" role="group" aria-label="Appels à l'action">
+          <button class="btn" onclick="alert('Prototype du chatbot à implémenter — exemple démonstratif')">Essayer le chatbot (démo)</button>
+          <a class="btn secondary" href="#hospitals">Voir hôpitaux disponibles</a>
+        </div>
+
+        <p style="margin-top:.75rem;color:var(--muted);font-size:.95rem">Langues supportées : <strong>Wolof</strong> et <strong>Français</strong>.</p>
+      </div>
+
+      <div style="min-width:0">
+        <div class="card" aria-hidden="false">
+          <h3>Comment ça marche</h3>
+          <ol>
+            <li>Vous décrivez vos symptômes au chatbot (texte ou voix).</li>
+            <li>L'IA (NLP) analyse les signes et donne un pré-diagnostic.</li>
+            <li>La fonction de géolocalisation trouve l'hôpital le plus proche.</li>
+            <li>Le système vérifie la disponibilité des lits et vous oriente.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid two-col">
+      <section id="probleme" class="card" aria-labelledby="probleme-title">
+        <h3 id="probleme-title">Problème identifié</h3>
+        <p>Au Sénégal, les patients se déplacent souvent sans information fiable : ils ne savent pas s’ils doivent consulter et vers quel établissement se diriger. Cela provoque des surcharges dans les urgences et des délais de prise en charge.</p>
+      </section>
+
+      <section id="solution" class="card" aria-labelledby="solution-title">
+        <h3 id="solution-title">Solution proposée</h3>
+        <p>Doctor AI combine :</p>
+        <ul>
+          <li>Un chatbot médical (IA + NLP) pour un pré-diagnostic.</li>
+          <li>Une API de cartographie pour la localisation.</li>
+          <li>Une base de données temps réel partagée par les hôpitaux pour la gestion des lits.</li>
+        </ul>
+        <p><strong>Techniques :</strong> modèles NLP légers, règles cliniques, API REST pour les hôpitaux, cache local pour la résilience réseau.</p>
+      </section>
+    </div>
+
+    <section id="impact" class="card" aria-labelledby="impact-title" style="margin-top:1rem">
+      <h3 id="impact-title">Impact attendu</h3>
+      <ul>
+        <li>Réduction des files d'attente</li>
+        <li>Mieux répartir les patients</li>
+        <li>Prévention via l'analyse des données (anticipation des pics)</li>
+      </ul>
+    </section>
+
+    <section id="hospitals" class="card hospitals" aria-labelledby="hospitals-title" style="margin-top:1rem">
+      <h3 id="hospitals-title">Hôpitaux à proximité (exemple)</h3>
+      <p style="margin-top:0;color:var(--muted)">Données simulées — en production, ces informations viennent d'une API sécurisée des établissements.</p>
+
+      <table aria-describedby="hospitals-desc">
+        <caption id="hospitals-desc">Liste des hôpitaux proches et nombre de lits disponibles</caption>
+        <thead>
+          <tr><th>Hôpital</th><th>Distance</th><th>Lits disponibles</th><th>Contact</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hôpital Principal de Dakar</td>
+            <td>3.2 km</td>
+            <td><span class="badge available" aria-label="5 lits disponibles">5</span></td>
+            <td><a href="tel:+221338000001">+221 33 800 00 01</a></td>
+          </tr>
+          <tr>
+            <td>Centre de Santé Pikine</td>
+            <td>7.8 km</td>
+            <td><span class="badge full" aria-label="Complet">0</span></td>
+            <td><a href="tel:+221338000002">+221 33 800 00 02</a></td>
+          </tr>
+          <tr>
+            <td>Clinique Thiès</td>
+            <td>34 km</td>
+            <td><span class="badge available" aria-label="2 lits disponibles">2</span></td>
+            <td><a href="tel:+221338000003">+221 33 800 00 03</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:.75rem;color:var(--muted)">Requête d'emplacement : <em>Autorisez la géolocalisation pour voir les établissements autour de vous.</em></p>
+      <button class="btn" onclick="navigator.geolocation ? navigator.geolocation.getCurrentPosition(showMock) : alert('Géolocalisation non supportée')">Trouver les hôpitaux proches</button>
+    </section>
+
+    <section id="urgence" class="card" aria-labelledby="urgence-title" style="margin-top:1rem">
+      <h3 id="urgence-title">Gestion des urgences</h3>
+      <p>En cas de symptômes graves détectés par le chatbot, Doctor AI déclenche automatiquement une <strong>alerte hôpital</strong> :</p>
+      <ul>
+        <li>Préparation de l’équipe médicale avant l’arrivée du patient.</li>
+        <li>Transmission des informations essentielles (symptômes, localisation, contact).</li>
+        <li>Orientation directe vers l’établissement le plus proche disposant de lits.</li>
+      </ul>
+      <button class="btn" onclick="alert('Alerte envoyée à l’hôpital le plus proche (démo)')">
+        Déclencher une alerte urgence (démo)
+      </button>
+    </section>
+
+    <section id="contact" class="card" aria-labelledby="contact-title" style="margin-top:1rem">
+      <h3 id="contact-title">Contact & Démo</h3>
+      <p class="lead">Demande de démonstration, partenariat hôpital ou signalement d'un établissement :</p>
+
+      <form action="#" onsubmit="event.preventDefault();alert('Merci — formulaire soumis (démo)')" aria-label="Formulaire de contact">
+        <label for="name">Nom complet</label>
+        <input id="name" name="name" type="text" required aria-required="true" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required aria-required="true" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Doctor AI — Conçu pour les défis de santé au Sénégal • <a href="#contact">Contact</a></p>
+    </footer>
+
+  </div>
+
+  <script>
+    function showMock(pos){
+      // Exemple démonstratif — en production on ferait une recherche serveur avec lat/lon
+      alert('Coordonnées récupérées (démo) — latitude: '+pos.coords.latitude.toFixed(4)+', longitude: '+pos.coords.longitude.toFixed(4));
+    }
+  </script>
+</body>
+</html> -->
+
+<!-- ================================================================================================================== -->
+
+<!-- <!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doctor AI — Votre santé, mieux orientée</title>
+  <meta name="description" content="Doctor AI : chatbot de pré-diagnostic médical et système de localisation + gestion de lits pour orienter rapidement les patients vers l'hôpital adéquat." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header aria-labelledby="site-title">
+    <div class="nav">
+      <div class="brand">
+        <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="6" fill="white" />
+          <path d="M6 12h12M12 6v12" stroke="var(--primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <h1 id="site-title">Doctor AI</h1>
+          <div style="font-size:.85rem;color:rgba(255,255,255,.9)">Votre santé, mieux orientée</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <div class="nav-links">
+          <a href="#probleme" aria-current="page">Problème</a>
+          <a href="#solution">Solution</a>
+          <a href="#impact">Impact</a>
+          <a href="#hospitals">Hôpitaux</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h2 id="hero-heading">Chatbot de pré-diagnostic & gestion de lits</h2>
+        <p class="lead">Doctor AI aide à décider si une visite à l'hôpital est nécessaire, oriente l'utilisateur vers l'établissement le plus proche et indique la disponibilité des lits en temps réel.</p>
+
+        <div class="cta" role="group" aria-label="Appels à l'action">
+          <button class="btn" onclick="alert('Prototype du chatbot à implémenter — exemple démonstratif')">Essayer le chatbot (démo)</button>
+          <a class="btn secondary" href="#hospitals">Voir hôpitaux disponibles</a>
+        </div>
+
+        <p style="margin-top:.75rem;color:var(--muted);font-size:.95rem">Langues supportées : <strong>Wolof</strong> et <strong>Français</strong>.</p>
+      </div>
+
+      <div style="min-width:0">
+        <div class="card">
+          <h3>Comment ça marche</h3>
+          <ol>
+            <li>Vous décrivez vos symptômes au chatbot (texte ou voix).</li>
+            <li>L'IA (NLP) analyse les signes et donne un pré-diagnostic.</li>
+            <li>La fonction de géolocalisation trouve l'hôpital le plus proche.</li>
+            <li>Le système vérifie la disponibilité des lits et vous oriente.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid two-col">
+      <section id="probleme" class="card" aria-labelledby="probleme-title">
+        <h3 id="probleme-title">Problème identifié</h3>
+        <p>Au Sénégal, les patients se déplacent souvent sans information fiable : ils ne savent pas s’ils doivent consulter et vers quel établissement se diriger. Cela provoque des surcharges dans les urgences et des délais de prise en charge.</p>
+      </section>
+
+      <section id="solution" class="card" aria-labelledby="solution-title">
+        <h3 id="solution-title">Solution proposée</h3>
+        <p>Doctor AI combine :</p>
+        <ul>
+          <li>Un chatbot médical (IA + NLP) pour un pré-diagnostic.</li>
+          <li>Une API de cartographie pour la localisation.</li>
+          <li>Une base de données temps réel partagée par les hôpitaux pour la gestion des lits.</li>
+        </ul>
+        <p><strong>Techniques :</strong> modèles NLP légers, règles cliniques, API REST pour les hôpitaux, cache local pour la résilience réseau.</p>
+      </section>
+    </div>
+
+    <section id="impact" class="card" aria-labelledby="impact-title" style="margin-top:1rem">
+      <h3 id="impact-title">Impact attendu</h3>
+      <ul>
+        <li>Réduction des files d'attente</li>
+        <li>Mieux répartir les patients</li>
+        <li>Prévention via l'analyse des données (anticipation des pics)</li>
+      </ul>
+    </section>
+
+    <section id="hospitals" class="card hospitals" aria-labelledby="hospitals-title" style="margin-top:1rem">
+      <h3 id="hospitals-title">Hôpitaux à proximité (exemple)</h3>
+      <p style="margin-top:0;color:var(--muted)">Données simulées — en production, ces informations viennent d'une API sécurisée des établissements.</p>
+
+      <table aria-describedby="hospitals-desc">
+        <caption id="hospitals-desc">Liste des hôpitaux proches et nombre de lits disponibles</caption>
+        <thead>
+          <tr>
+            <th scope="col">Hôpital</th>
+            <th scope="col">Distance</th>
+            <th scope="col">Lits disponibles</th>
+            <th scope="col">Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hôpital Principal de Dakar</td>
+            <td>3.2 km</td>
+            <td><span class="badge available" role="status" aria-live="polite" aria-label="5 lits disponibles">5</span></td>
+            <td><a href="tel:+221338000001">+221 33 800 00 01</a></td>
+          </tr>
+          <tr>
+            <td>Centre de Santé Pikine</td>
+            <td>7.8 km</td>
+            <td><span class="badge full" role="status" aria-live="polite" aria-label="Complet">0</span></td>
+            <td><a href="tel:+221338000002">+221 33 800 00 02</a></td>
+          </tr>
+          <tr>
+            <td>Clinique Thiès</td>
+            <td>34 km</td>
+            <td><span class="badge available" role="status" aria-live="polite" aria-label="2 lits disponibles">2</span></td>
+            <td><a href="tel:+221338000003">+221 33 800 00 03</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-top:.75rem;color:var(--muted)">Requête d'emplacement : <em>Autorisez la géolocalisation pour voir les établissements autour de vous.</em></p>
+      <button class="btn" onclick="navigator.geolocation ? navigator.geolocation.getCurrentPosition(showMock) : alert('Géolocalisation non supportée')">Trouver les hôpitaux proches</button>
+    </section>
+
+    <section id="contact" class="card" aria-labelledby="contact-title" style="margin-top:1rem">
+      <h3 id="contact-title">Contact & Démo</h3>
+      <p class="lead">Demande de démonstration, partenariat hôpital ou signalement d'un établissement :</p>
+
+      <form action="#" onsubmit="event.preventDefault();alert('Merci — formulaire soumis (démo)')" aria-label="Formulaire de contact">
+        <label for="name">Nom complet</label>
+        <input id="name" name="name" type="text" required aria-required="true" />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required aria-required="true" />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 Doctor AI — Conçu pour les défis de santé au Sénégal • <a href="#contact">Contact</a></p>
+    </footer>
+
+  </main>
+
+  <script>
+    function showMock(pos){
+      alert('Coordonnées récupérées (démo) — latitude: '+pos.coords.latitude.toFixed(4)+', longitude: '+pos.coords.longitude.toFixed(4));
+    }
+  </script>
+</body>
+</html> -->
+<!-- ============================================================================================ -->
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Doctor AI — Votre santé, mieux orientée</title>
+  <meta name="description" content="Doctor AI : chatbot de pré-diagnostic médical et système de localisation + gestion de lits pour orienter rapidement les patients vers l'hôpital adéquat." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header aria-labelledby="site-title">
+    <div class="nav">
+      <div class="brand">
+        <img src="assets/img/logo.png" alt="Logo Doctor AI" class="logo" />
+        <div>
+          <h1 id="site-title">Doctor AI</h1>
+          <div class="subtitle">Votre santé, mieux orientée</div>
+        </div>
+      </div>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#probleme" aria-current="page">Problème</a></li>
+          <li><a href="#solution">Solution</a></li>
+          <li><a href="#impact">Impact</a></li>
+          <li><a href="#urgence">Urgences</a></li>
+          <li><a href="#hospitals">Hôpitaux</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h2 id="hero-heading">Chatbot de pré-diagnostic & gestion de lits</h2>
+        <p class="lead">Doctor AI aide à décider si une visite à l'hôpital est nécessaire, oriente l'utilisateur vers l'établissement le plus proche et indique la disponibilité des lits en temps réel.</p>
+        <div class="cta" role="group" aria-label="Appels à l'action">
+          <button class="btn" onclick="alert('Prototype du chatbot à implémenter — exemple démonstratif')">Essayer le chatbot (démo)</button>
+          <a class="btn secondary" href="#hospitals">Voir hôpitaux disponibles</a>
+        </div>
+        <p class="languages">Langues supportées : <strong>Wolof</strong> et <strong>Français</strong>.</p>
+      </div>
+      <div>
+        <img src="assets/img/hero.png" alt="Illustration du chatbot médical Doctor AI sur smartphone" class="illustration" />
+      </div>
+    </section>
+
+    <!-- Problème -->
+    <section id="probleme" class="card two-col" aria-labelledby="probleme-title">
+      <div>
+        <h3 id="probleme-title">Problème identifié</h3>
+        <p>Au Sénégal, les patients se déplacent souvent sans information fiable : ils ne savent pas s’ils doivent consulter et vers quel établissement se diriger. Cela provoque des surcharges dans les urgences et des délais de prise en charge.</p>
+      </div>
+      <div>
+        <img src="assets/img/probleme.png" alt="Salle d’attente d’hôpital bondée au Sénégal" class="illustration" />
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" class="card two-col" aria-labelledby="solution-title">
+      <div>
+        <h3 id="solution-title">Solution proposée</h3>
+        <p>Doctor AI combine :</p>
+        <ul>
+          <li>Un chatbot médical (IA + NLP) pour un pré-diagnostic.</li>
+          <li>Une API de cartographie pour la localisation.</li>
+          <li>Une base de données temps réel partagée par les hôpitaux pour la gestion des lits.</li>
+        </ul>
+        <p><strong>Techniques :</strong> modèles NLP légers, règles cliniques, API REST pour les hôpitaux, cache local pour la résilience réseau.</p>
+      </div>
+      <div>
+        <img src="assets/img/solution.png" alt="Smartphone montrant une carte avec hôpitaux géolocalisés et lits disponibles" class="illustration" />
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="card two-col" aria-labelledby="impact-title">
+      <div>
+        <h3 id="impact-title">Impact attendu</h3>
+        <ul>
+          <li>Réduction des files d'attente</li>
+          <li>Mieux répartir les patients</li>
+          <li>Prévention via l'analyse des données (anticipation des pics)</li>
+        </ul>
+      </div>
+      <div>
+        <img src="assets/img/impact.png" alt="Médecin accueillant rapidement un patient dans un hôpital organisé" class="illustration" />
+      </div>
+    </section>
+
+    <!-- Urgences -->
+    <section id="urgence" class="card two-col" aria-labelledby="urgence-title">
+      <div>
+        <h3 id="urgence-title">Gestion des urgences</h3>
+        <p>En cas de symptômes graves détectés par le chatbot, Doctor AI déclenche automatiquement une <strong>alerte hôpital</strong> :</p>
+        <ul>
+          <li>Préparation de l’équipe médicale avant l’arrivée du patient.</li>
+          <li>Transmission des informations essentielles (symptômes, localisation, contact).</li>
+          <li>Orientation directe vers l’établissement le plus proche disposant de lits.</li>
+        </ul>
+        <button class="btn" onclick="alert('Alerte envoyée à l’hôpital le plus proche (démo)')">
+          Déclencher une alerte urgence (démo)
+        </button>
+      </div>
+      <div>
+        <img src="assets/img/urgence.png" alt="Ambulance connectée recevant une alerte d'urgence" class="illustration" />
+      </div>
+    </section>
+
+    <!-- Hôpitaux -->
+    <section id="hospitals" class="card hospitals" aria-labelledby="hospitals-title">
+      <h3 id="hospitals-title">Hôpitaux à proximité (exemple)</h3>
+      <p class="muted">Données simulées — en production, ces informations viennent d'une API sécurisée des établissements.</p>
+      <table aria-describedby="hospitals-desc">
+        <caption id="hospitals-desc">Liste des hôpitaux proches et nombre de lits disponibles</caption>
+        <thead>
+          <tr>
+            <th scope="col">Hôpital</th>
+            <th scope="col">Distance</th>
+            <th scope="col">Lits disponibles</th>
+            <th scope="col">Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hôpital Principal de Dakar</td>
+            <td>3.2 km</td>
+            <td><span class="badge available" role="status" aria-live="polite">5</span></td>
+            <td><a href="tel:+221338000001">+221 33 800 00 01</a></td>
+          </tr>
+          <tr>
+            <td>Centre de Santé Pikine</td>
+            <td>7.8 km</td>
+            <td><span class="badge full" role="status" aria-live="polite">0</span></td>
+            <td><a href="tel:+221338000002">+221 33 800 00 02</a></td>
+          </tr>
+          <tr>
+            <td>Clinique Thiès</td>
+            <td>34 km</td>
+            <td><span class="badge available" role="status" aria-live="polite">2</span></td>
+            <td><a href="tel:+221338000003">+221 33 800 00 03</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted">Requête d'emplacement : <em>Autorisez la géolocalisation pour voir les établissements autour de vous.</em></p>
+      <button class="btn" onclick="navigator.geolocation ? navigator.geolocation.getCurrentPosition(showMock) : alert('Géolocalisation non supportée')">Trouver les hôpitaux proches</button>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card two-col" aria-labelledby="contact-title">
+      <div>
+        <h3 id="contact-title">Contact & Démo</h3>
+        <p class="lead">Demande de démonstration, partenariat hôpital ou signalement d'un établissement :</p>
+        <form action="#" onsubmit="event.preventDefault();alert('Merci — formulaire soumis (démo)')" aria-label="Formulaire de contact">
+          <label for="name">Nom complet</label>
+          <input id="name" name="name" type="text" required aria-required="true" />
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required aria-required="true" />
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+      <div>
+        <img src="assets/img/contact.png" alt="Illustration d’une personne écrivant un message sur ordinateur" class="illustration" />
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Doctor AI — Conçu pour les défis de santé au Sénégal • <a href="#contact">Contact</a></p>
+    </footer>
+  </main>
+
+  <script>
+    function showMock(pos){
+      alert('Coordonnées récupérées (démo) — latitude: '+pos.coords.latitude.toFixed(4)+', longitude: '+pos.coords.longitude.toFixed(4));
+    }
+  </script>
+</body>
+</html>
